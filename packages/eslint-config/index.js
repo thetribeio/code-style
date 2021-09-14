@@ -2,6 +2,7 @@ module.exports = {
     extends: 'airbnb-base',
     rules: {
         'arrow-parens': ['error', 'always'],
+        'class-methods-use-this': 'off',
         curly: ['error', 'all'],
         'import/order': ['error', {
             alphabetize: {

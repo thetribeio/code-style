@@ -1,6 +1,6 @@
 {
   "name": "@thetribe/eslint-config",
-  "version": "v0.4.2",
+  "version": "v0.4.3",
   "main": "index.js",
   "dependencies": {
     "eslint-config-airbnb-base": "^14.1.0"
