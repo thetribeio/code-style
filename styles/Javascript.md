@@ -1,6 +1,6 @@
 # theTribe's Javascript code style
 
-theTribe's Javascript code style is base on the airbnb code style which is an
+theTribe's Javascript code style is base on the [airbnb code style](https://github.com/airbnb/javascript) which is an
 already recognized standard with the following changes/additions:
 
 ## Indentation
