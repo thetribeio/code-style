@@ -4,9 +4,7 @@
   "main": "index.js",
   "dependencies": {
     "@thetribe/eslint-config": "^0.4.3",
-    "eslint-config-airbnb": "^18.1.0"
+    "eslint-config-airbnb": "^19.0.0"
   },
-  "peerDependencies": {
-    "eslint-plugin-react": "^7.15.0"
-  }
+  "files": []
 }
