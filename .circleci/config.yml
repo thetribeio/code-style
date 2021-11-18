@@ -1,15 +1,18 @@
 version: 2.1
 
+orbs:
+  node: circleci/node@4.5.1
+
 jobs:
   eslint-config:
     docker:
       - image: circleci/node:16.13.0
     steps:
       - checkout
-      - run:
-          name: Install dependencies
-          command: yarn install
-          working_directory: ~/project/packages/eslint-config
+      - node/install-packages:
+          app-dir: ~/project/packages/eslint-config
+          include-branch-in-cache-key: false
+          pkg-manager: yarn
       - run:
           name: Lint
           command: yarn lint
@@ -18,9 +21,27 @@ jobs:
           name: Test
           command: yarn test
           working_directory: ~/project/packages/eslint-config
+  eslint-config-react:
+    docker:
+      - image: circleci/node:16.13.0
+    steps:
+      - checkout
+      - node/install-packages:
+          app-dir: ~/project/packages/eslint-config-react
+          include-branch-in-cache-key: false
+          pkg-manager: yarn
+      - run:
+          name: Lint
+          command: yarn lint
+          working_directory: ~/project/packages/eslint-config-react
+      - run:
+          name: Test
+          command: yarn test
+          working_directory: ~/project/packages/eslint-config-react
 
 workflows:
   version: 2
   build:
     jobs:
       - eslint-config
+      - eslint-config-react
