@@ -4,6 +4,7 @@ The goal of this repository is to store the code style used by theTribe and its 
 
 It curently contains the following code style:
  - [Javascript](styles/Javascript.md)
+ - [Javascript with React](styles/JavascriptReact.md)
 
 And the following configurations:
 - [@thetribe/eslint-config](packages/eslint-config)
