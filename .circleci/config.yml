@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  node: circleci/node@4.5.1
+  node: circleci/node@5.0.2
 
 jobs:
   eslint-config:
@@ -26,6 +26,10 @@ jobs:
       - image: circleci/node:16.13.0
     steps:
       - checkout
+      - node/install-packages:
+          app-dir: ~/project/packages/eslint-config
+          include-branch-in-cache-key: false
+          pkg-manager: yarn
       - node/install-packages:
           app-dir: ~/project/packages/eslint-config-react
           include-branch-in-cache-key: false
