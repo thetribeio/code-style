@@ -10,8 +10,16 @@ module.exports = {
     rules: {
         // Replace base eslint rules with rules from typescript-eslint
         '@typescript-eslint/no-shadow': ['error'],
-        '@typescript-eslint/no-unused-vars': ['error'],
-        '@typescript-eslint/no-use-before-define': ['error'],
+        '@typescript-eslint/no-unused-vars': ['error', {
+            vars: 'all',
+            args: 'after-used',
+            ignoreRestSiblings: true,
+        }],
+        '@typescript-eslint/no-use-before-define': ['error', {
+            functions: true,
+            classes: true,
+            variables: true,
+        }],
         'no-shadow': 'off',
         'no-unused-vars': 'off',
         'no-use-before-define': 'off',
