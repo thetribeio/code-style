@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push: ~
+
+jobs:
+  eslint-config:
+    runs-on: ubuntu-20.04
+    defaults:
+      run:
+        working-directory: ./packages/eslint-config
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 14.19.3
+          cache: yarn
+          cache-dependency-path: ./packages/eslint-config
+      - run: yarn install --frozen-lockfile
+      - run: yarn lint
+      - run: yarn test
+
+  eslint-config-react:
+    runs-on: ubuntu-20.04
+    defaults:
+      run:
+        working-directory: ./packages/eslint-config-react
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 14.19.3
+          cache: yarn
+          cache-dependency-path: |
+            ./packages/eslint-config
+            ./packages/eslint-config-react
+      - run: yarn install --frozen-lockfile
+        working-directory: ./packages/eslint-config
+      - run: yarn install --frozen-lockfile
+      - run: yarn lint
+      - run: yarn test
