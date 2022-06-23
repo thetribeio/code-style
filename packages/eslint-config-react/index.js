@@ -1,7 +1,10 @@
 const eslintConfig = require('@thetribe/eslint-config');
 
 module.exports = {
-    extends: 'airbnb',
+    extends: [
+        'airbnb',
+        'plugin:react/jsx-runtime',
+    ],
     rules: {
         // We don't use extends to prevent airbnb-base from overriding some config from airbnb
         ...eslintConfig.rules,
