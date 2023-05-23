@@ -33,6 +33,8 @@ module.exports = {
         // Replace default-case with switch-exhaustiveness-check
         '@typescript-eslint/switch-exhaustiveness-check': 'error',
         'default-case': 'off',
+        // Add rules that are only possible with typescript
+        '@typescript-eslint/no-floating-promises': ['error'],
     },
     settings: {
         'import/extensions': [
