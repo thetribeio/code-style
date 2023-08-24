@@ -20,9 +20,13 @@ module.exports = {
             classes: true,
             variables: true,
         }],
+        '@typescript-eslint/quotes': ['error', 'single', {
+            avoidEscape: true,
+        }],
         'no-shadow': 'off',
         'no-unused-vars': 'off',
         'no-use-before-define': 'off',
+        'quotes': 'off',
         // Add ts to allowed extensions
         'import/extensions': ['error', 'ignorePackages', {
             cjs: 'never',
